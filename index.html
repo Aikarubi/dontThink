@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Don't Think</title>
+</head>
+<body>
+
+  <header>
+    <h1>Don't Think</h1>
+    <p>Libera tu mente, decide sin pensar</p>
+  </header>
+
+  <main>
+    <form>
+      <label for="decision">¿Qué necesitas decidir?</label>
+      <input type="text" id="decision" name="decision" required placeholder="Ej: ¿Qué como hoy?" />
+
+      <label for="categoria">Selecciona una categoría</label>
+      <select id="categoria" name="categoria" required>
+        <option value="" disabled selected>Elige una categoría</option>
+        <option value="comida">Comida</option>
+        <option value="ocio">Ocio</option>
+      </select>
+
+      <button type="submit">¡Decime por mí!</button>
+    </form>
+  </main>
+
+  <section aria-live="polite">
+    <h2>Resultado:</h2>
+    <p>Hoy toca... <span class="respuesta">¡Pedir comida china!</span></p>
+  </section>
+
+  <aside>
+    <p>"Decidir menos, vivir más."</p>
+  </aside>
+
+  <footer>
+    <p>© 2025 Don't Think. Hecho con ❤️ por Aikarubi</p>
+  </footer>
+
+</body>
+</html>
