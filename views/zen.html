@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Modo Zen | Don't Think</title>
+    <link rel="stylesheet" href="../assets/output.css" />
+</head>
+<style>
+  a[aria-current="page"] {
+    background-color: #7c3aed;
+    color: white;
+    box-shadow: 0 4px 6px rgba(124, 58, 237, 0.5);
+  }
+</style>
+
+
+<body
+    class="bg-gradient-to-br from-purple-200 via-pink-100 to-yellow-100 min-h-screen flex flex-col items-center px-4 py-10 font-sans relative">
+
+    <!-- Encabezado -->
+    <header class="text-center mt-20 mb-10">
+        <h1 class="text-purple-800 text-4xl drop-shadow-sm font-bold">🌿 Modo Zen</h1>
+        <p class="text-purple-600 text-lg mt-2">Elige cómo te sientes y recibe una frase que te acompañe</p>
+    </header>
+
+    <nav class="mb-10">
+        <ul class="flex justify-center gap-3 flex-wrap">
+            <li>
+                <a href="../index.html"
+                    class="px-4 py-2 text-sm text-purple-700 bg-white bg-opacity-60 backdrop-blur-md rounded-full shadow-sm
+                hover:bg-opacity-90 hover:text-purple-900
+                transition-all">
+                    🧩 Decide
+                </a>
+            </li>
+            <li>
+                <a href="zen.html" class="px-4 py-2 text-sm text-purple-700 bg-white bg-opacity-60 backdrop-blur-md rounded-full shadow-sm
+                hover:bg-opacity-90 hover:text-purple-900
+                transition-all" aria-current="page">
+                    🌿 Modo Zen
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+    <!-- Selector de emociones -->
+    <main class="bg-white p-6 rounded-2xl shadow-xl w-full max-w-md text-center space-y-6">
+        <div class="grid grid-cols-2 gap-4">
+            <button onclick="mostrarFrase('feliz')"
+                class="bg-yellow-200 hover:bg-yellow-300 text-yellow-900 py-2 rounded-xl font-semibold transition">😊
+                Feliz</button>
+            <button onclick="mostrarFrase('triste')"
+                class="bg-blue-200 hover:bg-blue-300 text-blue-900 py-2 rounded-xl font-semibold transition">😢
+                Triste</button>
+            <button onclick="mostrarFrase('ansioso')"
+                class="bg-purple-200 hover:bg-purple-300 text-purple-900 py-2 rounded-xl font-semibold transition">😰
+                Ansioso</button>
+            <button onclick="mostrarFrase('motivado')"
+                class="bg-green-200 hover:bg-green-300 text-green-900 py-2 rounded-xl font-semibold transition">💪
+                Motivado</button>
+            <button onclick="mostrarFrase('perdido')"
+                class="bg-pink-200 hover:bg-pink-300 text-pink-900 py-2 rounded-xl font-semibold transition col-span-2">🌀
+                Sin rumbo</button>
+        </div>
+
+        <!-- Resultado -->
+        <div id="frase"
+            class="mt-6 text-lg text-purple-700 italic min-h-[3rem] transition-opacity duration-300 ease-in-out"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-10 text-center text-purple-600 text-sm">
+        <p>© 2025 Don't Think. Hecho con 💛 por Aikarubi</p>
+    </footer>
+
+    <!-- Script -->
+    <script>
+        const frases = {
+            feliz: [
+                "Disfruta cada momento, estás brillando por dentro y por fuera.",
+                "Tu energía positiva ilumina todo a tu alrededor. ☀️"
+            ],
+            triste: [
+                "Está bien sentirse así. Lo importante es no quedarse quieto. 🌧️",
+                "Incluso los días grises tienen belleza si los miras con calma."
+            ],
+            ansioso: [
+                "Respira. Estás aquí, estás a salvo, y todo pasará. 🫁",
+                "No estás solo, y esto también tiene un final tranquilo."
+            ],
+            motivado: [
+                "Aprovecha tu fuerza interior. Hoy es un buen día para avanzar. 🚀",
+                "Tu motivación es contagiosa. No te detengas ahora."
+            ],
+            perdido: [
+                "A veces perderse es la mejor forma de encontrarse. 🌌",
+                "No tienes que tener todas las respuestas hoy."
+            ]
+        };
+
+        function mostrarFrase(emocion) {
+            const fraseEl = document.getElementById("frase");
+            const opciones = frases[emocion];
+            const aleatoria = opciones[Math.floor(Math.random() * opciones.length)];
+            fraseEl.textContent = `"${aleatoria}"`;
+            fraseEl.classList.remove("opacity-0");
+        }
+
+    </script>
+</body>
+
+</html>
