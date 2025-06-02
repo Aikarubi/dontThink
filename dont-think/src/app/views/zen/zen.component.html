@@ -1,1 +1,63 @@
-<p>zen works!</p>
+<div id="container"
+    class="bg-gradient-to-br from-purple-200 via-pink-100 to-yellow-100 min-h-screen flex flex-col items-center justify-center px-4 py-10 font-sans">
+
+    <div id="title" class="text-center mb-10">
+        <h1 class="text-purple-800 text-4xl drop-shadow-sm font-bold">🌿 Modo Zen</h1>
+        <p class="text-purple-600 text-lg mt-2">Elige cómo te sientes y recibe una frase que te acompañe</p>
+    </div>
+
+    <app-navbar></app-navbar>
+
+    <main class="bg-white p-6 rounded-2xl shadow-xl w-full max-w-md text-center space-y-6">
+        <!-- Emociones organizadas -->
+        <section class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-sm">
+            <!-- Positivas -->
+            <div class="col-span-3 text-left text-purple-700 font-bold mt-2">🌤️ Positivas</div>
+            <button onclick="mostrarFrase('feliz')"
+                class="bg-yellow-200 hover:bg-yellow-300 text-yellow-900 py-2 rounded-xl font-semibold transition">😊
+                Feliz</button>
+            <button onclick="mostrarFrase('inspirado')"
+                class="bg-orange-200 hover:bg-orange-300 text-orange-900 py-2 rounded-xl font-semibold transition">💡
+                Inspirado</button>
+
+            <button onclick="mostrarFrase('motivado')"
+                class="bg-green-200 hover:bg-green-300 text-green-900 py-2 rounded-xl font-semibold transition">💪
+                Motivado</button>
+
+            <!-- Negativas -->
+            <div class="col-span-3 text-left text-purple-700 font-bold mt-4">🌧️ Negativas</div>
+            <button onclick="mostrarFrase('triste')"
+                class="bg-blue-200 hover:bg-blue-300 text-blue-900 py-2 rounded-xl font-semibold transition">😢
+                Triste</button>
+            <button onclick="mostrarFrase('ansioso')"
+                class="bg-purple-200 hover:bg-purple-300 text-purple-900 py-2 rounded-xl font-semibold transition">😰
+                Ansioso</button>
+            <button onclick="mostrarFrase('frustrado')"
+                class="bg-red-200 hover:bg-red-300 text-red-900 py-2 rounded-xl font-semibold transition">😤
+                Frustrado</button>
+
+            <!-- Neutras o introspectivas -->
+            <div class="col-span-3 text-left text-purple-700 font-bold mt-4">🌫️ Introspectivas</div>
+            <button onclick="mostrarFrase('perdido')"
+                class="bg-pink-200 hover:bg-pink-300 text-pink-900 py-2 rounded-xl font-semibold transition">🌀 Sin
+                rumbo</button>
+            <button onclick="mostrarFrase('confundido')"
+                class="bg-gray-200 hover:bg-gray-300 text-gray-900 py-2 rounded-xl font-semibold transition">😶
+                Confundido</button>
+            <button onclick="mostrarFrase('reflexivo')"
+                class="bg-indigo-100 hover:bg-indigo-200 text-indigo-900 py-2 rounded-xl font-semibold transition">🧠
+                Reflexivo</button>
+
+        </section>
+
+
+    </main>
+
+    <!-- Resultado -->
+    <div id="frase"
+        class="mt-6 text-lg text-purple-700 italic min-h-[3rem] transition-opacity duration-300 ease-in-out bg-white p-6 rounded-2xl shadow-xl w-full max-w-md text-center space-y-6">{{frase}}
+    </div>
+
+
+    <app-footer></app-footer>
+</div>
